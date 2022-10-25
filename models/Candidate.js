@@ -7,15 +7,15 @@ const candidateSchema = new Schema({
 Underscoreid:String , 
 
 
-cimage:  
-MunicipalityMimageSchema
- , 
-
-
 cname:String , 
 
 
-cbio:String 
+cbio:String , 
+
+
+cimage:  
+MunicipalityMimageSchema
+ 
 
 
 

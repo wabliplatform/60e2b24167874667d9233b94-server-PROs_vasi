@@ -279,12 +279,12 @@ components:
       properties:
         _id:
           type: string
-        cimage:
-          $ref: '#/components/schemas/municipality_mimage'
         cname:
           type: string
         cbio:
           type: string
+        cimage:
+          $ref: '#/components/schemas/municipality_mimage'
       required:
       - cbio
       - cimage
