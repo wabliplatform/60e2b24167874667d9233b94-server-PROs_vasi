@@ -22,6 +22,7 @@ const createcandidate = ({ candidate }) => new Promise(
     }
   },
 );
+
 /**
 * Delete the element
 *
@@ -42,6 +43,7 @@ const deletecandidate = ({ candidateId }) => new Promise(
     }
   },
 );
+
 /**
 * Get all the data
 *
@@ -61,6 +63,7 @@ const getAllcandidate = () => new Promise(
     }
   },
 );
+
 /**
 * Get the element
 *
@@ -82,6 +85,7 @@ const getcandidate = ({ candidateId }) => new Promise(
     }
   },
 );
+
 /**
 * Updates the element
 *
@@ -103,6 +107,7 @@ const updatecandidate = ({ candidateId, candidate }) => new Promise(
     }
   },
 );
+
 
 module.exports = {
   createcandidate,

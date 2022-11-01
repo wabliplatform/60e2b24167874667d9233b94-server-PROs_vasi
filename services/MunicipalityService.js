@@ -22,6 +22,7 @@ const createmunicipality = ({ municipality }) => new Promise(
     }
   },
 );
+
 /**
 * Delete the element
 *
@@ -42,6 +43,7 @@ const deletemunicipality = ({ municipalityId }) => new Promise(
     }
   },
 );
+
 /**
 * Get all the data
 *
@@ -61,6 +63,7 @@ const getAllmunicipality = () => new Promise(
     }
   },
 );
+
 /**
 * Get the element
 *
@@ -82,6 +85,7 @@ const getmunicipality = ({ municipalityId }) => new Promise(
     }
   },
 );
+
 /**
 * Updates the element
 *
@@ -103,6 +107,7 @@ const updatemunicipality = ({ municipalityId, municipality }) => new Promise(
     }
   },
 );
+
 
 module.exports = {
   createmunicipality,
