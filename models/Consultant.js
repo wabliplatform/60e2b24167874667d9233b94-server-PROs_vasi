@@ -3,36 +3,25 @@ const { MunicipalityMimageSchema } =require('./MunicipalityMimage');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const candidateSchema = new Schema({
+const consultantSchema = new Schema({
 Underscoreid:String , 
 
 
-cname:String , 
+consname:String , 
 
 
-cbio:String , 
-
-
-cimage:  
+consimage:  
 MunicipalityMimageSchema
  , 
 
 
-
-
- cconsultants: [ 
-  {
-    type: Schema.Types.ObjectId,
-    ref:'consultant'
-  }
-
-]
+consbio:String 
 
 
 
 })
 
 module.exports = {
-  Candidate : mongoose.model('candidate', candidateSchema),
+  Consultant : mongoose.model('consultant', consultantSchema),
 }
 

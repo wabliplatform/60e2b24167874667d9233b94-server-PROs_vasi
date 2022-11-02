@@ -1,18 +1,18 @@
 /* eslint-disable no-unused-vars */
 const Service = require('./Service');
-const { Candidate } = require('../models/Candidate');
+const { Consultant } = require('../models/Consultant');
 
 /**
 * Creates the data
 *
-* candidate Candidate data to be created
-* returns candidate
+* consultant Consultant data to be created
+* returns consultant
 * */
-const createcandidate = ({ candidate }) => new Promise(
+const createconsultant = ({ consultant }) => new Promise(
   async (resolve, reject) => {
     try {
       let query = {};
-      query = await new Candidate(candidate).save();
+      query = await new Consultant(consultant).save();
       resolve(Service.successResponse({ query,}));
     } catch (e) {
       reject(Service.rejectResponse(
@@ -26,14 +26,14 @@ const createcandidate = ({ candidate }) => new Promise(
 /**
 * Delete the element
 *
-* candidateId String the Id parameter
+* consultantId String the Id parameter
 * no response value expected for this operation
 * */
-const deletecandidate = ({ candidateId }) => new Promise(
+const deleteconsultant = ({ consultantId }) => new Promise(
   async (resolve, reject) => {
     try {
       let query = {};
-      query = await Candidate.findOneAndDelete({ _id:candidateId }).exec();
+      query = await Consultant.findOneAndDelete({ _id:consultantId }).exec();
       resolve(Service.successResponse({ query,}));
     } catch (e) {
       reject(Service.rejectResponse(
@@ -49,11 +49,11 @@ const deletecandidate = ({ candidateId }) => new Promise(
 *
 * returns Object
 * */
-const getAllcandidate = () => new Promise(
+const getAllconsultant = () => new Promise(
   async (resolve, reject) => {
     try {
       let query = {}
-      query = await Candidate.find().populate(['cconsultants']).exec();
+      query = await Consultant.find().exec();
       resolve(Service.successResponse(query));
     } catch (e) {
       reject(Service.rejectResponse(
@@ -67,15 +67,15 @@ const getAllcandidate = () => new Promise(
 /**
 * Get the element
 *
-* candidateId String the Id parameter
-* returns candidate
+* consultantId String the Id parameter
+* returns consultant
 * */
-const getcandidate = ({ candidateId }) => new Promise(
+const getconsultant = ({ consultantId }) => new Promise(
   async (resolve, reject) => {
     try {
       let query = {};
-      query = await Candidate.findById(candidateId)
-      .populate(['cconsultants']).exec();
+      query = await Consultant.findById(consultantId)
+      .exec();
       resolve(Service.successResponse({ query,}));
     } catch (e) {
       reject(Service.rejectResponse(
@@ -89,15 +89,15 @@ const getcandidate = ({ candidateId }) => new Promise(
 /**
 * Updates the element
 *
-* candidateId String the Id parameter
-* candidate Candidate data to be updated (optional)
-* returns candidate
+* consultantId String the Id parameter
+* consultant Consultant data to be updated (optional)
+* returns consultant
 * */
-const updatecandidate = ({ candidateId, candidate }) => new Promise(
+const updateconsultant = ({ consultantId, consultant }) => new Promise(
   async (resolve, reject) => {
     try {
       let query = {};
-      query = await Candidate.findOneAndUpdate({ _id:candidateId },candidate).exec();
+      query = await Consultant.findOneAndUpdate({ _id:consultantId },consultant).exec();
       resolve(Service.successResponse({ query,}));
     } catch (e) {
       reject(Service.rejectResponse(
@@ -110,9 +110,9 @@ const updatecandidate = ({ candidateId, candidate }) => new Promise(
 
 
 module.exports = {
-  createcandidate,
-  deletecandidate,
-  getAllcandidate,
-  getcandidate,
-  updatecandidate,
+  createconsultant,
+  deleteconsultant,
+  getAllconsultant,
+  getconsultant,
+  updateconsultant,
 };

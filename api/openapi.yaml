@@ -22,6 +22,8 @@ tags:
   name: municipality
 - description: not yet ready
   name: candidate
+- description: not yet ready
+  name: consultant
 paths:
   /municipality:
     post:
@@ -237,6 +239,113 @@ paths:
       - candidate
       x-method-getAll: "true"
       x-eov-operation-handler: controllers/CandidateController
+  /consultant:
+    post:
+      operationId: createconsultant
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/consultant'
+        description: data to be created
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/consultant'
+          description: successful operation
+      summary: Creates the data
+      tags:
+      - consultant
+      x-eov-operation-handler: controllers/ConsultantController
+  /consultant/{consultantId}:
+    delete:
+      operationId: deleteconsultant
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: consultantId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: successful operation
+      summary: Delete the element
+      tags:
+      - consultant
+      x-eov-operation-handler: controllers/ConsultantController
+    get:
+      operationId: getconsultant
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: consultantId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/consultant'
+          description: successful operation
+      summary: Get the element
+      tags:
+      - consultant
+      x-eov-operation-handler: controllers/ConsultantController
+    put:
+      operationId: updateconsultant
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: consultantId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/consultant'
+        description: data to be updated
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/consultant'
+          description: successful operation
+      summary: Updates the element
+      tags:
+      - consultant
+      x-eov-operation-handler: controllers/ConsultantController
+  /consultant/getAll:
+    get:
+      operationId: getAllconsultant
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/consultant'
+                type: array
+          description: successful operation
+      summary: Get all the data
+      tags:
+      - consultant
+      x-method-getAll: "true"
+      x-eov-operation-handler: controllers/ConsultantController
 components:
   schemas:
     municipality:
@@ -274,6 +383,9 @@ components:
           data: data
           name: name
         cname: cname
+        cconsultants:
+        - ""
+        - ""
         _id: _id
         cbio: cbio
       properties:
@@ -285,10 +397,40 @@ components:
           type: string
         cimage:
           $ref: '#/components/schemas/municipality_mimage'
+        cconsultants:
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/consultant'
+            - type: string
+            x-one-of-name: consultant
+          type: array
       required:
       - cbio
+      - cconsultants
       - cimage
       - cname
+      type: object
+    consultant:
+      example:
+        consbio: consbio
+        consimage:
+          data: data
+          name: name
+        consname: consname
+        _id: _id
+      properties:
+        _id:
+          type: string
+        consname:
+          type: string
+        consimage:
+          $ref: '#/components/schemas/municipality_mimage'
+        consbio:
+          type: string
+      required:
+      - consbio
+      - consimage
+      - consname
       type: object
     municipality_mimage:
       example:
