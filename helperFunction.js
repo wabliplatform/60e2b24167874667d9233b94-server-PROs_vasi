@@ -3,5 +3,5 @@
   * @return {Array} [Municipality]
   */ 
 function getallmunicipalities(param) {
-  Municipality.sort ();
+  Municipality.sort (); 
 }
