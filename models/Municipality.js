@@ -7,11 +7,6 @@ const municipalitySchema = new Schema({
 Underscoreid:String , 
 
 
-mimage:  
-MunicipalityMimageSchema
- , 
-
-
 mname:String , 
 
 
@@ -24,6 +19,11 @@ mname:String ,
   }
 
 ]
+, 
+
+mimage:  
+MunicipalityMimageSchema
+ 
 
 
 
