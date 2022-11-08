@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 const Service = require('./Service');
 const { Municipality } = require('../models/Municipality');
+const { pregetAllmunicipality } = require('../helperFunction');
 
 /**
 * Creates the data
@@ -22,7 +23,6 @@ const createmunicipality = ({ municipality }) => new Promise(
     }
   },
 );
-
 /**
 * Delete the element
 *
@@ -43,7 +43,6 @@ const deletemunicipality = ({ municipalityId }) => new Promise(
     }
   },
 );
-
 /**
 * Get all the data
 *
@@ -54,6 +53,8 @@ const getAllmunicipality = () => new Promise(
     try {
       let query = {}
       query = await Municipality.find().populate(['mcandidates']).exec();
+      query = pregetAllmunicipality(query);
+      // this is a test
       resolve(Service.successResponse(query));
     } catch (e) {
       reject(Service.rejectResponse(
@@ -63,15 +64,6 @@ const getAllmunicipality = () => new Promise(
     }
   },
 );
-
-      /** This is a comment template
-  * @param {string} paramName
-  * @return {Array} [Municipality]
-  */ 
-function getallmunicipalities(param) {
-  Municipality.sort ();
-}
- //this is a test
 /**
 * Get the element
 *
@@ -93,7 +85,6 @@ const getmunicipality = ({ municipalityId }) => new Promise(
     }
   },
 );
-
 /**
 * Updates the element
 *
@@ -115,7 +106,6 @@ const updatemunicipality = ({ municipalityId, municipality }) => new Promise(
     }
   },
 );
-
 
 module.exports = {
   createmunicipality,

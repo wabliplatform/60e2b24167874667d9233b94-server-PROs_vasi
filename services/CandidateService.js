@@ -22,7 +22,6 @@ const createcandidate = ({ candidate }) => new Promise(
     }
   },
 );
-
 /**
 * Delete the element
 *
@@ -43,7 +42,6 @@ const deletecandidate = ({ candidateId }) => new Promise(
     }
   },
 );
-
 /**
 * Get all the data
 *
@@ -54,6 +52,7 @@ const getAllcandidate = () => new Promise(
     try {
       let query = {}
       query = await Candidate.find().populate(['cconsultants']).exec();
+      // this is a test
       resolve(Service.successResponse(query));
     } catch (e) {
       reject(Service.rejectResponse(
@@ -63,7 +62,6 @@ const getAllcandidate = () => new Promise(
     }
   },
 );
-
 /**
 * Get the element
 *
@@ -85,7 +83,6 @@ const getcandidate = ({ candidateId }) => new Promise(
     }
   },
 );
-
 /**
 * Updates the element
 *
@@ -107,7 +104,6 @@ const updatecandidate = ({ candidateId, candidate }) => new Promise(
     }
   },
 );
-
 
 module.exports = {
   createcandidate,

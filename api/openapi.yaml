@@ -134,6 +134,7 @@ paths:
       x-custom-code: "/** This is a comment template\n  * @param {string} paramName\n\
         \  * @return {Array} [Municipality]\n  */ \nfunction getallmunicipalities(param)\
         \ {\n  Municipality.sort ();\n}\n"
+      x-custom-code-prefix: pre
       x-eov-operation-handler: controllers/MunicipalityController
   /candidate:
     post:

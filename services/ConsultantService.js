@@ -22,7 +22,6 @@ const createconsultant = ({ consultant }) => new Promise(
     }
   },
 );
-
 /**
 * Delete the element
 *
@@ -43,7 +42,6 @@ const deleteconsultant = ({ consultantId }) => new Promise(
     }
   },
 );
-
 /**
 * Get all the data
 *
@@ -54,6 +52,7 @@ const getAllconsultant = () => new Promise(
     try {
       let query = {}
       query = await Consultant.find().exec();
+      // this is a test
       resolve(Service.successResponse(query));
     } catch (e) {
       reject(Service.rejectResponse(
@@ -63,7 +62,6 @@ const getAllconsultant = () => new Promise(
     }
   },
 );
-
 /**
 * Get the element
 *
@@ -85,7 +83,6 @@ const getconsultant = ({ consultantId }) => new Promise(
     }
   },
 );
-
 /**
 * Updates the element
 *
@@ -107,7 +104,6 @@ const updateconsultant = ({ consultantId, consultant }) => new Promise(
     }
   },
 );
-
 
 module.exports = {
   createconsultant,
