@@ -365,6 +365,8 @@ components:
       properties:
         _id:
           type: string
+        mimage:
+          $ref: '#/components/schemas/municipality_mimage'
         mname:
           type: string
         mcandidates:
@@ -374,8 +376,6 @@ components:
             - type: string
             x-one-of-name: candidate
           type: array
-        mimage:
-          $ref: '#/components/schemas/municipality_mimage'
       required:
       - mcandidates
       - mimage
