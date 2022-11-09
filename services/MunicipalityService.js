@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 const Service = require('./Service');
 const { Municipality } = require('../models/Municipality');
-const { pregetAllmunicipality } = require('../helperFunction');
 
 /**
 * Creates the data
