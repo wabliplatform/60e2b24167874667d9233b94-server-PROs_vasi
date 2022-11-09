@@ -53,6 +53,7 @@ const getAllmunicipality = () => new Promise(
     try {
       let query = {}
       query = await Municipality.find().populate(['mcandidates']).exec();
+      query = pregetAllmunicipality(query);
       // this is a test
       resolve(Service.successResponse(query));
     } catch (e) {
