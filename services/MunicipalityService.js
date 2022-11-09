@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 const Service = require('./Service');
 const { Municipality } = require('../models/Municipality');
-const { pregetAllmunicipality } = require('../helperFunction');
 
 /**
 * Creates the data
@@ -53,7 +52,6 @@ const getAllmunicipality = () => new Promise(
     try {
       let query = {}
       query = await Municipality.find().populate(['mcandidates']).exec();
-      query = pregetAllmunicipality(query);
       // this is a test
       resolve(Service.successResponse(query));
     } catch (e) {
