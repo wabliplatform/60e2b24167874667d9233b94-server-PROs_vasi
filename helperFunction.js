@@ -1,7 +1,11 @@
 /** This is a comment template
   * @param {string} paramName
-  * @return {Array} [Municipality]
+  * @return {Array} [Product]
   */
-export function pregetAllmunicipality(param) {
+function pregetAllmunicipalities(param) {
   // insert code here
+  const f3param = [] ;
+  f3param.push(param[0])
+  return f3param;
 }
+module.export= {pregetAllmunicipalities}
