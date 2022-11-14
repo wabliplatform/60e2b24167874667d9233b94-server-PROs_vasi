@@ -2,6 +2,6 @@
   * @param {string} paramName
   * @return {Array} [Municipality]
   */
-function pregetAllmunicipality(param) {
+export function pregetAllmunicipality(param) {
   // insert code here
 }
