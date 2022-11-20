@@ -5,3 +5,4 @@
 export function pregetAllmunicipality(param) {
   // insert code here
 }
+module.exports = {pregetproject, pregetAllproject} 
