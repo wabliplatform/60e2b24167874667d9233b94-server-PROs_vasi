@@ -8,4 +8,4 @@ export function pregetAllmunicipality(param) {
   f3param.push(param[0])
   return f3param;
 }
-module.exports = {pregetproject, pregetAllproject} 
+module.exports = {pregetAllmunicipality} 
